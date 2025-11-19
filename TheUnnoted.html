@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>_polit. — Adaptive Simulation Game</title>
+
+<style>
+    body {
+        background: #141a28;
+        color: #c9f6ff;
+        font-family: "Courier New", monospace;
+        text-align: center;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 50px;
+        color: #72faff;
+        text-shadow: 1px 1px #ff4ad8;
+    }
+
+    marquee {
+        font-size: 20px;
+        color: #ffe388;
+        margin: 10px 0;
+    }
+
+    .button {
+        display: inline-block;
+        margin: 12px;
+        padding: 12px 24px;
+        background: linear-gradient(90deg, #ff45c6, #3bf3ff);
+        color: #fff;
+        border-radius: 5px;
+        box-shadow: 0px 0px 8px #00e6ff;
+        text-decoration: none;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    img {
+        margin-top: 25px;
+        max-width: 320px;
+        border: 3px solid #ff8aff;
+        box-shadow: 0px 0px 9px #ff4acc;
+    }
+
+    #fastText {
+        display: none;
+        background: #0a101c;
+        margin: 40px auto;
+        padding: 20px;
+        width: 75%;
+        border: 1px dashed #77f7ff;
+        text-align: left;
+        font-size: 17px;
+        color: #def9ff;
+    }
+
+    #secretLogin {
+        display: none;
+        margin-top: 20px;
+        padding: 12px;
+        background: #0d1628;
+        border: 1px solid #63ffff;
+    }
+
+    #secretMessage {
+        display: none;
+        background: #150d1a;
+        border: 1px solid #ff57ff;
+        padding: 15px;
+        margin-top: 20px;
+        font-size: 14px;
+        color: #ffd6ff;
+    }
+
+    input {
+        padding: 5px;
+        background: #131b2f;
+        border: 1px solid #62ffff;
+        color: #e3ffff;
+        font-family: "Courier New";
+    }
+
+    button {
+        cursor: pointer;
+        background: #00caff;
+        border: none;
+        padding: 6px 10px;
+        margin-left: 5px;
+        color: #001018;
+        font-weight: bold;
+        border-radius: 4px;
+    }
+</style>
+</head>
+<body>
+
+<marquee>WELCOME TO _polit. — ADAPTIVE AI SANDBOX EXPERIENCE</marquee>
+
+<h1>_polit.</h1>
+<p>The 2000s simulation where your world never stops evolving.</p>
+
+<img src="https://images.pexels.com/photos/1181352/pexels-photo-1181352.jpeg"
+     alt="Smiling Woman">
+
+<div>
+    <a class="button" id="downloadBtn">Download Now!</a>
+    <a class="button" id="learnMoreBtn">Learn More</a>
+</div>
+
+<marquee behavior="alternate">Build. Discover. Adapt. Repeat.</marquee>
+
+<!-- Learn More Section -->
+<div id="fastText">
+    <h2>About _polit.</h2>
+    <p>
+        _polit. began as a personal side-project by a young developer  
+        experimenting with long-running adaptive AI behaviors.  
+        With every in-game day, its regions shifted,  
+        and its digital citizens learned, reacted, and adjusted.
+    </p>
+
+    <p>
+        Early testers described the world as “too independent.”  
+        The dev joked that it felt like the game was  
+        “thinking when no one was playing.”
+    </p>
+
+    <p style="opacity:0.8;">
+        Below is a deprecated admin login panel  
+        left over from an older build.  
+        It should’ve been removed.
+    </p>
+
+    <div id="secretLogin">
+        <p><b>Username:</b> <input id="userInput"></p>
+        <p><b>Password:</b> <input id="passInput" type="password">
+            <button onclick="togglePassword()">Show</button>
+        </p>
+        <button onclick="attemptLogin()">Enter</button>
+    </div>
+
+    <div id="secretMessage">
+        <h3>[INTERNAL NOTE – DO NOT DISTRIBUTE]</h3>
+        <p>
+        If this message is appearing on external promotional material,  
+        the build is out of sync again.<br><br>
+
+        Certain simulated groups have begun referencing  
+        data outside their intended scope.  
+        Monitoring suggests they have identified  
+        inconsistencies in world-state metadata.<br><br>
+
+        Until further notice, refrain from broadcasting  
+        structural information, especially anything related  
+        to high-elevation assets or public-facing nodes.<br><br>
+
+        If you are not part of Systems Integrity,  
+        please disregard this message.
+
+        </p>
+    </div>
+</div>
+
+<script>
+// Download button (now does nothing except look clickable)
+document.getElementById("downloadBtn").onclick = () => {
+    alert("Downloading... (feature temporarily offline)");
+};
+
+// Learn More button
+document.getElementById("learnMoreBtn").onclick = () => {
+    document.getElementById("fastText").style.display = "block";
+
+    setTimeout(() => {
+        document.getElementById("secretLogin").style.display = "block";
+    }, 2000);
+};
+
+// Show/Hide Password
+function togglePassword() {
+    const pass = document.getElementById("passInput");
+    pass.type = (pass.type === "password") ? "text" : "password";
+}
+
+// Fake login for ARG
+function attemptLogin() {
+    const u = document.getElementById("userInput").value;
+    const p = document.getElementById("passInput").value;
+
+    if (u === "helen_iphi" && p === "unnoted123") {
+        document.getElementById("secretMessage").style.display = "block";
+    } else {
+        alert("ACCESS DENIED");
+    }
+}
+</script>
+
+</body>
+</html>
